@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faSkull, faGhost, faStar, faBomb, faVideo, faKey, faSpider } from '@fortawesome/free-solid-svg-icons';
-import { Link } from "react-router-dom";
 import video from '../Video/marvel2.mp4';
 
 const Footer = () => {

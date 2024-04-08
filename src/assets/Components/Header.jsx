@@ -53,7 +53,6 @@ const Header = ({ search, setSearch, comicSearch, setComicSearch,
                 </nav>
             </header>
 
-
             <div className="search">
                 <form onSubmit={onSubmit}>
                     <input
