@@ -22,7 +22,7 @@ const Characters = ({ search }) => {
 
                 const skip = (currentPage - 1) * pageSize;
 
-                const response = await axios.get("http://localhost:3000/characters", {
+                const response = await axios.get("https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/characters", {
                     params: {
                         apikey: validApiKey,
                         skip: skip,

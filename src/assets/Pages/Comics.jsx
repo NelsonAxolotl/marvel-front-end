@@ -18,7 +18,7 @@ const Comics = ({ comicsSearch }) => {
 
                 const skip = (currentPage - 1) * pageSize;
 
-                const response = await axios.get("http://localhost:3000/comics", {
+                const response = await axios.get("https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/comics", {
                     params: {
                         apikey: validApiKey,
                         skip: skip,
