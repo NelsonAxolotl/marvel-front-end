@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+
 import { faCoffee, faSkull, faGhost, faStar, faBomb, faVideo, faKey, faSpider } from '@fortawesome/free-solid-svg-icons';
 import video from '../Video/marvel2.mp4';
 
