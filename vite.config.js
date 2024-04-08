@@ -6,8 +6,7 @@ export default defineConfig({
   plugins: [react(), eslint()],
   build: {
     rollupOptions: {
-      external: ['js-cookie'],
-      external: ['@fortawesome/react-fontawesome']
+      external: ['js-cookie', '@fortawesome/react-fontawesome']
     }
   }
 });
