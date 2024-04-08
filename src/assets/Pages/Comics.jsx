@@ -4,7 +4,7 @@ import axios from 'axios';
 const Comics = ({ comicsSearch }) => {
 
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [, setError] = useState(null);
     const [data, setData] = useState({ results: [], count: 0 });
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 100;

@@ -9,7 +9,7 @@ const Characters = ({ search }) => {
 
     const [data, setData] = useState({ results: [], count: 0 });
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 100;
     const validApiKey = '2yP9TZZSBoTZ2418';
