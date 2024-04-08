@@ -653,6 +653,14 @@ form button:hover {
     margin-bottom: 460px;
 }
 
+.container-fav h1 {
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 50px;
+    font-family: "Bungee Spice", sans-serif;
+}
+
 /*-------FOOTER------*/
 
 footer {
