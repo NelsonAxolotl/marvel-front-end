@@ -93,8 +93,7 @@ a {
 
 @media screen and (max-width: 768px) {
     .home h1 {
-        font-size: 25px;
-
+        font-size: 20px;
         padding-top: 50px;
     }
 
@@ -186,7 +185,7 @@ video {
     justify-content: flex-start;
     align-items: center;
     gap: 50px;
-    padding-left: 25px;
+    padding-left: 15px;
 }
 
 .btn button {
@@ -216,23 +215,22 @@ video {
     }
 
     nav ul {
-        gap: 15px;
+        gap: 20px;
     }
 
     nav ul li {
-        font-size: 16px;
-        padding-right: 10px;
+        font-size: 13px;
     }
 
     .btn button {
-        font-size: 16px;
-        margin-right: -30px;
+        font-size: 14px;
+        margin-right: -40px;
         margin-top: 15px;
     }
 
     .search input {
         font-size: 16px;
-        width: 350px;
+        width: 300px;
     }
 }
 
@@ -409,7 +407,15 @@ video {
     }
 
     .pagination span {
-        font-size: 30px;
+        font-size: 20px;
+    }
+
+    .pagination button {
+        font-size: 15px;
+    }
+
+    .loading p {
+        font-size: 18px;
     }
 }
 
@@ -682,6 +688,19 @@ form button:hover {
     font-weight: bold;
 }
 
+@media screen and (max-width: 576px) {
+    .form input {
+        font-size: 11px;
+    }
+
+    form button {
+        font-size: 20px;
+    }
+
+    .btn-slide p {
+        font-size: 15px;
+    }
+}
 
 /*-----PAGE LOGIN--------*/
 
@@ -706,6 +725,16 @@ form button:hover {
     font-size: 50px;
     font-family: "Bungee Spice", sans-serif;
 }
+
+/*RESPONSIVE---*/
+@media screen and (max-width: 768px) {
+    .container-fav h1 {
+        font-size: 30px;
+    }
+
+}
+
+
 
 /*-------FOOTER------*/
 
@@ -831,8 +860,6 @@ footer h4 {
     }
 
     .icons a {
-        font-size: 25px;
+        font-size: 15px;
     }
 }
-
-/*---responsive-------*/
