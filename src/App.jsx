@@ -40,28 +40,25 @@ function App() {
   return (
     <>
       <Router>
-        <div className='body'>
-          <div className='container'>
-            <Header search={search} setSearch={setSearch} comicSearch={comicSearch} setComicSearch={setComicSearch} token={token}
-              handleToken={handleToken}
+        <div className='container'>
+          <Header search={search} setSearch={setSearch} comicSearch={comicSearch} setComicSearch={setComicSearch} token={token}
+            handleToken={handleToken}
 
-            />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/comics/:characterId" element={<ComicsCharacter />} />
-              <Route path="/characters" element={<Characters search={search}
+          />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/comics/:characterId" element={<ComicsCharacter />} />
+            <Route path="/characters" element={<Characters search={search}
 
-              />} />
-              <Route path="/comics" element={<Comics comicsSearch={comicSearch} />} />
-              <Route path="/favorites" element={<Favorites />} />
-              <Route path="/signup" element={<Signup handleToken={handleToken} />} />
-              <Route path="/login" element={<Login handleToken={handleToken} />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-          <Footer />
+            />} />
+            <Route path="/comics" element={<Comics comicsSearch={comicSearch} />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/signup" element={<Signup handleToken={handleToken} />} />
+            <Route path="/login" element={<Login handleToken={handleToken} />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
-
+        <Footer />
       </Router>
     </>
   )

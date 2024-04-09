@@ -38,7 +38,7 @@ const Characters = ({ search }) => {
 
             } catch (error) {
                 setError('Erreur lors de la récupération des personnages');
-                console.log(error);
+
 
             }
         };
