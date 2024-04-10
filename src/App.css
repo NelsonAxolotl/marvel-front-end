@@ -93,7 +93,7 @@ a {
 
 @media screen and (max-width: 768px) {
     .home h1 {
-        font-size: 20px;
+        font-size: 25px;
         padding-top: 50px;
     }
 
@@ -210,27 +210,27 @@ video {
 /*-----RESPONSIVE-----*/
 @media screen and (max-width: 768px) {
     header img {
-        height: 40px;
+        height: 50px;
         padding-top: 10px;
     }
 
     nav ul {
-        gap: 20px;
+        gap: 32px;
     }
 
     nav ul li {
-        font-size: 13px;
+        font-size: 19px;
+        margin-right: -15px;
     }
 
     .btn button {
-        font-size: 14px;
-        margin-right: -40px;
+        font-size: 16px;
         margin-top: 15px;
     }
 
     .search input {
         font-size: 16px;
-        width: 300px;
+        width: 320px;
     }
 }
 
@@ -333,7 +333,7 @@ video {
     font-weight: 500;
     transition: .3s ease-in-out;
     font-family: "Luckiest Guy", cursive;
-    line-height: 20px;
+    line-height: 22px;
 }
 
 .character-description:hover {
@@ -407,15 +407,13 @@ video {
     }
 
     .pagination span {
-        font-size: 20px;
-    }
-
-    .pagination button {
-        font-size: 15px;
+        font-size: 30px;
+        margin-top: 15px;
     }
 
     .loading p {
-        font-size: 18px;
+        font-size: 25px;
+        text-align: center;
     }
 }
 
@@ -492,7 +490,7 @@ video {
     font-size: 17px;
     margin-top: 20px;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 22px;
     transition: .3s ease-in-out;
     cursor: pointer;
     text-align: center;
@@ -590,6 +588,9 @@ video {
     font-size: 18px;
     padding-top: 20px;
     transition: .3s ease-in-out;
+    font-weight: 500;
+    font-family: "Luckiest Guy", cursive;
+    line-height: 22px;
 }
 
 .comic-card-content p:hover {
@@ -712,7 +713,7 @@ form button:hover {
 
 }
 
-/*--------------PAGE FAVORIS------*/
+/*--------------PAGE FAVORIS---------*/
 
 .container-fav {
     margin-bottom: 460px;
@@ -733,8 +734,6 @@ form button:hover {
     }
 
 }
-
-
 
 /*-------FOOTER------*/
 
@@ -856,10 +855,11 @@ footer h4 {
 
 @media screen and (max-width: 768px) {
     footer {
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+        margin-top: 0;
     }
 
     .icons a {
-        font-size: 15px;
+        font-size: 25px;
     }
 }
