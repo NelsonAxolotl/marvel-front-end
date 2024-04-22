@@ -16,11 +16,14 @@ const Signup = ({ handleToken }) => {
     try {
       setErrorMessage("");
 
-      const response = await axios.post(`http://localhost:3000/signup`, {
-        email: email,
-        username: username,
-        password: password,
-      });
+      const response = await axios.post(
+        `https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/signup`,
+        {
+          email: email,
+          username: username,
+          password: password,
+        }
+      );
 
       console.log(response.data);
       handleToken(response.data.token);
