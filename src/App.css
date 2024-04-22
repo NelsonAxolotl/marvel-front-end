@@ -1,284 +1,247 @@
 * {
-    box-sizing: border-box;
-    font-family: "Bungee Spice", sans-serif;
-    /* font-family: "Luckiest Guy", cursive; */
+  box-sizing: border-box;
+  font-family: "Bungee Spice", sans-serif;
+  /* font-family: "Luckiest Guy", cursive; */
 }
 
-body {
-    background: url(./assets/IMG/wall3.jpeg);
-    background-image: url(./assets/IMG/wall3.jpeg);
-    background-repeat: repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
+.body {
+  background: url(./assets/IMG/wall3.jpeg);
+  background-repeat: repeat;
+  object-position: cover center;
+  background-size: center;
+  z-index: -3;
+  padding-bottom: 50px;
+  height: 100%;
 }
 
 .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 10px;
-    padding-top: 30px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 10px;
+  padding-top: 30px;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    padding-top: 10px;
-    font-family: "Luckiest Guy", cursive;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  padding-top: 10px;
+  font-family: "Luckiest Guy", cursive;
 }
 
 /*-----PAGE HOME----*/
 
 .home {
-    background: url(./assets/IMG/wall.jpg);
-    object-fit: cover;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: 80px;
-    border-radius: 5px;
-    text-align: center;
-    animation: fadeInBackground 7s ease-in-out forwards;
+  background: url(./assets/IMG/wall.jpg);
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 80px;
+  border-radius: 5px;
+  text-align: center;
+  animation: fadeInBackground 7s ease-in-out forwards;
 }
 
 @keyframes fadeInBackground {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
-
+  100% {
+    opacity: 1;
+  }
 }
 
 .home h1 {
-    color: rgb(255, 255, 255);
-    font-size: 80px;
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 130px;
-    margin-bottom: 250px;
-    font-family: "Luckiest Guy", cursive;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: appear 6s linear forwards;
+  color: rgb(255, 255, 255);
+  font-size: 80px;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 130px;
+  margin-bottom: 250px;
+  font-family: "Luckiest Guy", cursive;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: appear 6s linear forwards;
 }
 
 @keyframes appear {
-    from {
-        width: 30vw;
-    }
+  from {
+    width: 30vw;
+  }
 
-    to {
-        width: 100%;
-    }
+  to {
+    width: 100%;
+  }
 }
-
 
 /* Media queries pour le responsive */
 @media screen and (max-width: 1024px) {
-    .home h1 {
-        font-size: 60px;
-        margin-top: 20px;
-    }
+  .home h1 {
+    font-size: 60px;
+    margin-top: 20px;
+  }
 }
 
-
 @media screen and (max-width: 768px) {
-    .home h1 {
-        font-size: 25px;
-        padding-top: 50px;
-    }
-
-    .home {
-        background-size: 100%;
-        margin-top: -30px;
-    }
+  .home h1 {
+    font-size: 30px;
+    margin-top: 45px;
+  }
 }
 
 /*------HEADER-----*/
 
 header {
-    position: relative;
-    border: 5px solid red;
-    border-radius: 5px;
-    height: 230px;
+  position: relative;
+  border: 5px solid red;
+  border-radius: 5px;
+  height: 230px;
 }
 
 header img {
-    height: 60px;
-    transition: .3s ease-in-out;
-    margin-top: 20px;
-    margin-left: 20px;
-    z-index: 1;
-    position: relative;
-    cursor: pointer;
+  height: 60px;
+  transition: 0.3s ease-in-out;
+  margin-top: 20px;
+  margin-left: 20px;
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
 }
 
 header img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 nav ul {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    /* border: 1px solid green; */
-    gap: 25px;
-    margin-top: 50px;
-    margin-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  /* border: 1px solid green; */
+  gap: 25px;
+  margin-top: 50px;
+  margin-right: 20px;
 }
 
 nav ul li {
-    color: red;
-    font-size: 22px;
-    font-weight: bold;
-    font-family: "Bungee Spice", sans-serif;
-    transition: .3s ease-in-out;
-    /* border: 1px solid blue; */
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Bungee Spice", sans-serif;
+  transition: 0.3s ease-in-out;
+  /* border: 1px solid blue; */
 }
 
 nav ul li:hover {
-    color: white;
-    transform: scale(1.12);
+  color: white;
+  transform: scale(1.12);
 }
 
 video {
-    object-fit: cover;
-    position: absolute;
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 5px;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .search {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding-top: 40px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 40px;
 }
 
 .search input {
-    height: 40px;
-    width: 400px;
-    border: 2px solid red;
-    border-radius: 5px;
-    outline: none;
-    text-align: center;
-    font-size: 20px;
+  height: 40px;
+  width: 400px;
+  border: 2px solid red;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  font-size: 20px;
 }
 
 .btn {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 50px;
-    padding-left: 15px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 50px;
+  padding-left: 40px;
 }
 
 .btn button {
-    font-size: 18px;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: .3s ease-in-out;
-    gap: 20px;
+  font-size: 18px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  gap: 20px;
 }
 
 .btn button:hover {
-    transform: scale(1.1);
-    border: 2px solid red;
+  transform: scale(1.1);
+  border: 2px solid red;
 }
 
 .btn-off {
-    padding-left: 100px;
-    padding-top: 15px;
+  padding-left: 100px;
+  padding-top: 15px;
 }
 
-/*-----RESPONSIVE-----*/
-@media screen and (max-width: 768px) {
-    header img {
-        height: 50px;
-        padding-top: 10px;
-    }
-
-    nav ul {
-        gap: 30px;
-    }
-
-    nav ul li {
-        font-size: 16px;
-        margin-right: -12px;
-    }
-
-    .btn button {
-        font-size: 15px;
-        margin-top: 10px;
-        margin-right: -20px;
-    }
-
-    .search input {
-        font-size: 16px;
-        width: 320px;
-    }
-}
-
-
-/*---------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
 
 /*-----ROUTE CHARACTERS------*/
 
 .loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loading p {
-    font-size: 40px;
-    color: white;
-    margin-bottom: 400px;
-    font-family: "Bungee Spice", sans-serif;
+  font-size: 40px;
+  color: white;
+  margin-bottom: 400px;
+  font-family: "Bungee Spice", sans-serif;
 }
 
 .perso-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 270px;
+  height: 100%;
 }
 
 .card-link {
-    width: calc(25% - 20px);
-    height: auto;
-    border: 2px solid#fffcfc;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    margin-bottom: 30px;
+  width: calc(25% - 20px);
+  height: auto;
+  border: 2px solid#fffcfc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 30px;
 }
 
 .card-link:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .card {
-    width: 100%;
+  width: 100%;
 }
 
 /* .card span {
@@ -291,578 +254,519 @@ video {
 } */
 
 .card-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card-pic {
-    width: 100%;
-    height: 260px;
-    overflow: hidden;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
 }
 
 .character-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .card-details {
-    padding: 10px;
+  padding: 10px;
 }
 
 .character-name {
-    font-size: 25px;
-    font-weight: bold;
-    font-family: "Bungee Spice", sans-serif;
-    padding-top: 25px;
-    text-align: center;
-    transition: .3s ease-in-out;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Bungee Spice", sans-serif;
+  padding-top: 25px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
 }
 
 .character-name:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .character-description {
-    margin-top: 20px;
-    color: rgb(255, 255, 255);
-    padding-top: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    transition: .3s ease-in-out;
-    font-family: "Luckiest Guy", cursive;
-    line-height: 22px;
+  margin-top: 20px;
+  color: rgb(255, 255, 255);
+  padding-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+  font-family: "Luckiest Guy", cursive;
+  line-height: 20px;
 }
 
 .character-description:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .no-description {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .comics-title h1 {
-    color: white;
-    font-size: 50px;
-    padding-top: 30px;
-    font-family: "Bungee Spice", sans-serif;
-    text-align: center;
+  color: white;
+  font-size: 50px;
+  padding-top: 30px;
+  font-family: "Bungee Spice", sans-serif;
+  text-align: center;
 }
 
 .pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .pagination span {
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    font-family: "Luckiest Guy", cursive;
-    text-align: center;
-    padding-top: 20px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "Luckiest Guy", cursive;
+  text-align: center;
+  padding-top: 20px;
 }
 
 .pagination button {
-    font-size: 20px;
-    margin-top: 30px;
-    transition: .3s ease-in-out;
-    cursor: pointer;
-    font-size: 24px;
-    border-radius: 5px;
-    border: 2px solid white;
+  font-size: 20px;
+  margin-top: 30px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 5px;
+  border: 2px solid white;
 }
 
 .pagination button:hover {
-    transform: scale(1.05);
-
+  transform: scale(1.05);
 }
 
 /* Media queries pour le responsive */
 @media screen and (max-width: 1200px) {
-    .card-link {
-        width: calc(33.33% - 20px);
-    }
+  .card-link {
+    width: calc(33.33% - 20px);
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .card-link {
-        width: calc(50% - 20px);
-    }
-
-    .comics-title h1 {
-        font-size: 30px;
-    }
-
-    .pagination button {
-        font-size: 20px;
-    }
-
-    .pagination span {
-        font-size: 30px;
-        margin-top: 15px;
-    }
-
-    .loading p {
-        font-size: 25px;
-        text-align: center;
-    }
+  .card-link {
+    width: calc(50% - 20px);
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .card-link {
-        width: calc(100% - 20px);
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .card-link {
+    width: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /*-----------PAGE COMICS LIEE AU PERSO----*/
 
 .order-comics {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .perso-comics {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
 .comics {
-    width: calc(26% - 30px);
-    height: auto;
-    margin-bottom: 20px;
-    border: 2px solid#ff0000;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    margin-bottom: 30px;
+  width: calc(26% - 30px);
+  height: auto;
+  margin-bottom: 20px;
+  border: 2px solid#ff0000;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 30px;
 }
 
 .comics:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .comics-list {
-    padding-bottom: 270px;
+  padding-bottom: 270px;
 }
 
 .comics h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: white;
-    text-align: center;
-    margin: 20px 0;
-    font-family: "Bungee Spice", sans-serif;
-    transition: .3s ease-in-out;
-    cursor: pointer;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: white;
+  text-align: center;
+  margin: 20px 0;
+  font-family: "Bungee Spice", sans-serif;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .comics h2:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .comics img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .comics p {
-    color: #ffffff;
-    font-size: 17px;
-    margin-top: 20px;
-    font-weight: 500;
-    line-height: 22px;
-    transition: .3s ease-in-out;
-    cursor: pointer;
-    text-align: center;
-    margin-bottom: 10px;
-    font-family: "Luckiest Guy", cursive;
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Luckiest Guy", cursive;
 }
 
 .comics p:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .comics span {
-    font-size: 24px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-    font-family: "Luckiest Guy", cursive;
+  font-size: 24px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  font-family: "Luckiest Guy", cursive;
 }
 
 /* Media queries pour le responsive */
 @media screen and (max-width: 1200px) {
-    .comics {
-        width: calc(33.33% - 20px);
-    }
+  .comics {
+    width: calc(33.33% - 20px);
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .comics {
-        width: calc(50% - 20px);
-    }
+  .comics {
+    width: calc(50% - 20px);
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .comics {
-        width: calc(100% - 20px);
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .comics {
+    width: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /*--------------PAGE COMICS-----------*/
 
 .comics-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 50px;
-    margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .comic-card {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 400px;
-    margin-bottom: 20px;
-    border: 3px solid #0059ff;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 400px;
+  margin-bottom: 20px;
+  border: 3px solid #0059ff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .comic-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .comic-image {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 .comic-card-content {
-    padding: 20px;
+  padding: 20px;
 }
 
 .comic-card-content h2 {
-    font-family: "Bungee Spice", sans-serif;
-    font-size: 25px;
-    margin: 10px 0;
-    text-align: center;
-    transition: .3s ease-in-out;
+  font-family: "Bungee Spice", sans-serif;
+  font-size: 25px;
+  margin: 10px 0;
+  text-align: center;
+  transition: 0.3s ease-in-out;
 }
 
 .comic-card-content h2:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .comic-card-content p {
-    color: #ffffff;
-    font-size: 18px;
-    padding-top: 20px;
-    transition: .3s ease-in-out;
-    font-weight: 500;
-    font-family: "Luckiest Guy", cursive;
-    line-height: 22px;
+  color: #ffffff;
+  font-size: 18px;
+  padding-top: 20px;
+  transition: 0.3s ease-in-out;
 }
 
 .comic-card-content p:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .comic-card-content p.no-description {
-    font-style: italic;
-    color: #ffffff;
-
+  font-style: italic;
+  color: #ffffff;
 }
 
 .no-text {
-    color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 70px;
-    font-size: 25px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  font-size: 25px;
 }
 
 /* Media queries pour le responsive */
 @media screen and (max-width: 768px) {
-    .comic {
-        width: calc(30% - 20px);
-    }
+  .comic {
+    width: calc(30% - 20px);
+  }
 }
 
-
 @media screen and (max-width: 576px) {
-    .comic {
-        width: calc(100% - 20px);
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .comic {
+    width: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /*-------PAGE SIGNUP-----*/
 
 .formulaire {
-    height: 550px;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 5px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-
+  height: 550px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  margin-top: 50px;
 }
 
 .form {
-    /* border: 1px solid red; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 80px;
-    gap: 40px;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  gap: 40px;
 }
 
 .form input {
-    font-size: 20px;
-    text-align: center;
-    padding: 6px 50px;
-    border-radius: 10px;
-    border: 2px solid red;
-    outline: none;
+  font-size: 20px;
+  text-align: center;
+  padding: 6px 50px;
+  border-radius: 10px;
+  border: 2px solid red;
+  outline: none;
 }
 
 .form h2 {
-    font-size: 30px;
-    color: white;
-    font-family: "Luckiest Guy", cursive;
+  font-size: 30px;
+  color: white;
+  font-family: "Luckiest Guy", cursive;
 }
 
 form button {
-    color: white;
-    font-size: 30px;
-    margin-top: 20px;
-    padding: 0 10px;
-    border: 2px solid red;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .3s ease-in-out;
+  color: white;
+  font-size: 30px;
+  margin-top: 20px;
+  padding: 0 10px;
+  border: 2px solid red;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 form button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .btn-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
 }
 
 .btn-slide p {
-    padding: 10px 0;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-@media screen and (max-width: 576px) {
-    .form input {
-        font-size: 14px;
-
-    }
-
-    form button {
-        font-size: 20px;
-    }
-
-    .btn-slide p {
-        font-size: 15px;
-    }
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /*-----PAGE LOGIN--------*/
 
 .form-connexion {
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*--------------PAGE FAVORIS---------*/
 
 .container-fav {
-    margin-bottom: 460px;
+  margin-bottom: 460px;
 }
 
 .container-fav h1 {
-    color: white;
-    text-align: center;
-    margin-top: 40px;
-    font-size: 50px;
-    font-family: "Bungee Spice", sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 50px;
+  font-family: "Bungee Spice", sans-serif;
 }
 
 /*RESPONSIVE---*/
 @media screen and (max-width: 768px) {
-    .container-fav h1 {
-        font-size: 30px;
-    }
-
+  .container-fav h1 {
+    font-size: 30px;
+  }
 }
 
 /*-------FOOTER------*/
 
 footer {
-    position: relative;
-    border: 5px solid rgb(255, 255, 255);
-    border-radius: 5px;
-    height: 320px;
-    margin-top: 100px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 40px;
+  position: relative;
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  height: 320px;
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 footer video {
-    object-fit: cover;
-    position: absolute;
-    width: 100%;
-    height: 310px;
-    object-fit: cover;
-    border-radius: 5px;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .icons {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    transition: .3s ease-in-out;
-    align-items: center;
-    margin-top: 80px;
-    padding-left: 20px;
-    gap: 55px;
-    cursor: pointer;
-    transition: .3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  align-items: center;
+  margin-top: 80px;
+  padding-left: 20px;
+  gap: 55px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .icons a:hover {
-    color: rgb(255, 4, 0);
+  color: rgb(255, 4, 0);
 }
 
 .icons span {
-    transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .icons span:hover {
-    transform: scaleY(1.2);
+  transform: scaleY(1.2);
 }
 
 .icons a {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .flex-h3 {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 footer h3 {
-    position: relative;
-    color: white;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 30px;
-    font-family: "Luckiest Guy", cursive;
-    border-bottom: #fffcfc solid 1px;
+  position: relative;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 30px;
+  font-family: "Luckiest Guy", cursive;
+  border-bottom: #fffcfc solid 1px;
 }
 
 footer nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer nav ul {
-    gap: 25px;
-    padding-left: 10px;
-    cursor: pointer;
+  gap: 25px;
+  padding-left: 10px;
+  cursor: pointer;
 }
 
 footer nav ul li {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 footer h4 {
-    position: relative;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-    padding-top: 20px;
+  position: relative;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 20px;
 }
-
 
 /* Media queries pour le responsive */
 @media screen and (max-width: 900px) {
-    footer nav ul li {
-        font-size: 15px;
-    }
+  footer nav ul li {
+    font-size: 15px;
+  }
 
-    footer nav ul li {
-        display: none;
-    }
+  footer nav ul li {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 830px) {
+  .icons a {
+    font-size: 35px;
+  }
 
-    .icons a {
-        font-size: 35px;
-    }
-
-    .icons {
-        margin-top: 100px;
-        gap: 15px;
-        padding-right: 20px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    footer {
-        margin-bottom: 40px;
-        margin-top: 0;
-    }
-
-    .icons a {
-        font-size: 23px;
-    }
+  .icons {
+    margin-top: 100px;
+    gap: 15px;
+    padding-right: 20px;
+  }
 }
