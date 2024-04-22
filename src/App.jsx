@@ -63,7 +63,7 @@ function App() {
               />
               <Route
                 path="/favorites/:userId"
-                element={<Favorites userId={userId} setUserId={setUserId} />}
+                element={<Favorites userId={userId} />}
               />
               <Route
                 path="/signup"
@@ -71,7 +71,9 @@ function App() {
               />
               <Route
                 path="/login"
-                element={<Login handleToken={handleToken} />}
+                element={
+                  <Login handleToken={handleToken} setUserId={setUserId} />
+                }
               />
               <Route path="*" element={<NotFound />} />
             </Routes>

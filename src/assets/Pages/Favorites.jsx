@@ -3,6 +3,8 @@ import axios from "axios";
 
 const Favorites = ({ userId }) => {
   const [favorites, setFavorites] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   console.log("userId", userId);
 
   useEffect(() => {
@@ -11,7 +13,7 @@ const Favorites = ({ userId }) => {
         const response = await axios.get(
           `http://localhost:3000/favorites/${userId}`
         );
-        console.log("Favorites Response:", response.data);
+
         setFavorites(response.data.favorites);
       } catch (error) {
         console.error("Erreur lors de la récupération des favoris :", error);
@@ -21,8 +23,14 @@ const Favorites = ({ userId }) => {
     fetchFavorites();
   }, [userId]);
 
-  console.log("Favorites State:", favorites);
-  return (
+  return isLoading ? (
+    <div
+      className="loading"
+      style={{ minHeight: isLoading ? "100vh" : "auto" }}
+    >
+      <p>Loading....</p>
+    </div>
+  ) : (
     <div className="container">
       <h1>My Favorites</h1>
       {favorites && favorites.length > 0 ? (
