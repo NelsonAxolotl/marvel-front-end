@@ -21,15 +21,15 @@ import Footer from "./assets/Components/Footer";
 function App() {
   const [search, setSearch] = useState("");
   const [comicSearch, setComicSearch] = useState("");
-  const [token, setToken] = useState(Cookies.get("marvel-token") || null);
-  const [userId, setUserId] = useState(null);
+  const [token, setToken] = useState(Cookies.get("userToken") || null);
+  const [userId, setUserId] = useState(Cookies.get("userId") || null);
 
   const handleToken = (token) => {
     if (token) {
-      Cookies.set("User-Token", token, { expires: 15 });
+      Cookies.set("userToken", token, { expires: 15 });
       setToken(token);
     } else {
-      Cookies.remove("UserToken");
+      Cookies.remove("userToken");
       setToken(null);
     }
   };
@@ -63,7 +63,7 @@ function App() {
               />
               <Route
                 path="/favorites/:userId"
-                element={<Favorites userId={userId} />}
+                element={<Favorites userId={userId} setUserId={setUserId} />}
               />
               <Route
                 path="/signup"

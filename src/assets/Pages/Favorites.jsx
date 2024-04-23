@@ -13,7 +13,7 @@ const Favorites = ({ userId }) => {
         const response = await axios.get(
           `http://localhost:3000/favorites/${userId}`
         );
-
+        console.log(response);
         setFavorites(response.data.favorites);
       } catch (error) {
         console.error("Erreur lors de la récupération des favoris :", error);
