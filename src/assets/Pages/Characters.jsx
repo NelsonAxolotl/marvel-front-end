@@ -9,7 +9,7 @@ import Favorites from "./Favorites";
 const Characters = ({ search, userId }) => {
   const [data, setData] = useState({ results: [], count: 0 });
   const [isLoading, setIsLoading] = useState(true);
-  const [, setError] = useState(null);
+  const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [favorites, setFavorites] = useState([]);
 
@@ -59,23 +59,61 @@ const Characters = ({ search, userId }) => {
 
   const totalPages = Math.ceil(data.count / pageSize);
 
-  const handleAddFavorite = (character) => {
-    // Vérifiez d'abord si le personnage est déjà dans les favoris
-    const found = favorites.find((fav) => fav._id === character._id);
-    // Si le personnage n'est pas déjà dans les favoris, ajoutez-le
-    if (!found) {
-      setFavorites([...favorites, character]);
+  const handleAddFavorite = async (character) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/user/favorites/add",
+        {
+          userId: userId, // Envoyer l'ID de l'utilisateur
+          characterId: character._id, // Envoyer l'ID du personnage à ajouter aux favoris
+        }
+      );
+
+      const found = favorites.find((fav) => fav._id === character._id);
+      if (!found) {
+        setFavorites([...favorites, character]);
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'ajout du favori :", error);
     }
   };
-  // Fonction pour supprimer un personnage des favoris
-  const handleRemoveFavorite = (character) => {
-    // Filtrer les favoris pour exclure le personnage à supprimer
-    const updatedFavorites = favorites.filter(
-      (fav) => fav._id !== character._id
-    );
-    // Mettre à jour l'état avec les favoris mis à jour
-    setFavorites(updatedFavorites);
+
+  // const handleAddFavorite = (character) => {
+  // Vérifiez d'abord si le personnage est déjà dans les favoris
+  //   const found = favorites.find((fav) => fav._id === character._id);
+  //   // Si le personnage n'est pas déjà dans les favoris, ajoutez-le
+  //   if (!found) {
+  //     setFavorites([...favorites, character]);
+  //   }
+  // };
+
+  const handleRemoveFavorite = async (character) => {
+    try {
+      // Effectuer une requête POST vers votre endpoint sur le serveur
+      const response = await axios.post(
+        "http://localhost:3000/user/favorites/remove",
+        {
+          userId: userId, // Envoyer l'ID de l'utilisateur
+          characterId: character._id, // Envoyer l'ID du personnage à supprimer des favoris
+        }
+      );
+      const updatedFavorites = favorites.filter(
+        (fav) => fav._id !== character._id
+      );
+      setFavorites(updatedFavorites);
+    } catch (error) {
+      console.error("Erreur lors de la suppression du favori :", error);
+    }
   };
+
+  // const handleRemoveFavorite =  async (character) => {
+  //   // Filtrer les favoris pour exclure le personnage à supprimer
+  //   const updatedFavorites = favorites.filter(
+  //     (fav) => fav._id !== character._id
+  //   );
+  //   // Mettre à jour l'état avec les favoris mis à jour
+  //   setFavorites(updatedFavorites);
+  // };
 
   return isLoading ? (
     <div
@@ -152,7 +190,6 @@ const Characters = ({ search, userId }) => {
           );
         })}
       </div>
-      {/* <Favorites favorites={favorites} /> */}
     </>
   );
 };
