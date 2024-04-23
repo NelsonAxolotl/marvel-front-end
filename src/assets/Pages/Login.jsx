@@ -22,7 +22,9 @@ const Login = ({ handleToken, setUserId }) => {
 
       if (response.data.token) {
         handleToken(response.data.token);
-        setUserId(response.data._id);
+      }
+      if (response.data._id) {
+        setUserId(response.data._id); // Mise à jour de l'ID de l'utilisateur
       }
       navigate("/");
     } catch (error) {
