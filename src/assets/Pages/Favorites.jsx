@@ -16,7 +16,7 @@ const Favorites = ({ userId }) => {
         console.log(response);
         setFavorites(response.data.favorites);
       } catch (error) {
-        console.error("Erreur lors de la récupération des favoris :", error);
+        console.error("Erreur pendant la récupération des favoris :", error);
       }
     };
 
