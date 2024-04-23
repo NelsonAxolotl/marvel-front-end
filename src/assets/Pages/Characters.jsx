@@ -73,23 +73,19 @@ const Characters = ({ search, userId }) => {
       if (!found) {
         setFavorites([...favorites, character]);
       }
+      alert(response.data.message); // Affiche le message de statut
     } catch (error) {
       console.error("Erreur lors de l'ajout du favori :", error);
+      if (error.response) {
+        alert(error.response.data.message); // Affiche le message d'erreur du serveur
+      } else {
+        alert("Erreur lors de l'ajout du favori"); // Message d'erreur générique
+      }
     }
   };
 
-  // const handleAddFavorite = (character) => {
-  // Vérifiez d'abord si le personnage est déjà dans les favoris
-  //   const found = favorites.find((fav) => fav._id === character._id);
-  //   // Si le personnage n'est pas déjà dans les favoris, ajoutez-le
-  //   if (!found) {
-  //     setFavorites([...favorites, character]);
-  //   }
-  // };
-
   const handleRemoveFavorite = async (character) => {
     try {
-      // Effectuer une requête POST vers votre endpoint sur le serveur
       const response = await axios.post(
         "http://localhost:3000/user/favorites/remove",
         {
@@ -101,19 +97,16 @@ const Characters = ({ search, userId }) => {
         (fav) => fav._id !== character._id
       );
       setFavorites(updatedFavorites);
+      alert(response.data.message); // Affiche le message de statut
     } catch (error) {
       console.error("Erreur lors de la suppression du favori :", error);
+      if (error.response) {
+        alert(error.response.data.message); // Affiche le message d'erreur du serveur
+      } else {
+        alert("Erreur lors de la suppression du favori"); // Message d'erreur générique
+      }
     }
   };
-
-  // const handleRemoveFavorite =  async (character) => {
-  //   // Filtrer les favoris pour exclure le personnage à supprimer
-  //   const updatedFavorites = favorites.filter(
-  //     (fav) => fav._id !== character._id
-  //   );
-  //   // Mettre à jour l'état avec les favoris mis à jour
-  //   setFavorites(updatedFavorites);
-  // };
 
   return isLoading ? (
     <div
