@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import poster from "../IMG/marvel2.jpg";
 import Favorites from "./Favorites";
 
-const Characters = ({ search }) => {
+const Characters = ({ search, userId }) => {
   const [data, setData] = useState({ results: [], count: 0 });
   const [isLoading, setIsLoading] = useState(true);
   const [, setError] = useState(null);
@@ -22,7 +22,8 @@ const Characters = ({ search }) => {
         const skip = (currentPage - 1) * pageSize;
 
         const response = await axios.get(
-          "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/characters",
+          // "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/characters",
+          "http://localhost:3000/characters",
           {
             params: {
               apikey: validApiKey,
@@ -44,7 +45,7 @@ const Characters = ({ search }) => {
     };
 
     fetchData();
-  }, [currentPage, search]);
+  }, [currentPage, search, userId]);
 
   const handleNextPage = () => {
     console.log("Next page button clicked");
@@ -137,11 +138,11 @@ const Characters = ({ search }) => {
                   <Link to={`/comics/${character._id}`} className="card-link">
                     Details
                   </Link>
-                  {/* Bouton d'ajout aux favoris */}
+
                   <button onClick={() => handleAddFavorite(character)}>
                     Add to Favorites
                   </button>
-                  {/* Bouton de suppression des favoris */}
+
                   <button onClick={() => handleRemoveFavorite(character)}>
                     Remove from Favorites
                   </button>
@@ -151,7 +152,7 @@ const Characters = ({ search }) => {
           );
         })}
       </div>
-      <Favorites favorites={favorites} />
+      {/* <Favorites favorites={favorites} /> */}
     </>
   );
 };

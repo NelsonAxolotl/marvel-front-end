@@ -15,12 +15,14 @@ const Favorites = ({ userId }) => {
         );
         console.log(response);
         setFavorites(response.data.favorites);
+        setIsLoading(false);
       } catch (error) {
         console.error("Erreur pendant la récupération des favoris :", error);
       }
     };
-
-    fetchFavorites();
+    if (userId) {
+      fetchFavorites();
+    }
   }, [userId]);
 
   return isLoading ? (

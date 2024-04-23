@@ -55,7 +55,7 @@ function App() {
               />
               <Route
                 path="/characters"
-                element={<Characters search={search} />}
+                element={<Characters search={search} userId={userId} />}
               />
               <Route
                 path="/comics"
