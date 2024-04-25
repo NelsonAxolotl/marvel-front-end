@@ -28,9 +28,15 @@ function App() {
     if (token) {
       Cookies.set("userToken", token, { expires: 15 });
       setToken(token);
+      if (userId) {
+        Cookies.set("userId", userId, { expires: 15 });
+        setUserId(userId);
+      }
     } else {
       Cookies.remove("userToken");
+      Cookies.remove("userId");
       setToken(null);
+      setUserId(null);
     }
   };
 
@@ -62,7 +68,7 @@ function App() {
                 element={<Comics comicsSearch={comicSearch} />}
               />
               <Route
-                path="/favorites/:userId"
+                path="/favorites"
                 element={<Favorites userId={userId} setUserId={setUserId} />}
               />
               <Route

@@ -5,7 +5,7 @@ const Favorites = ({ userId }) => {
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log("userId", userId);
+  // console.log("userId", userId);
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -13,6 +13,7 @@ const Favorites = ({ userId }) => {
         const response = await axios.get(
           `http://localhost:3000/favorites/${userId}`
         );
+
         console.log(response);
         setFavorites(response.data.favorites);
         setIsLoading(false);
@@ -36,20 +37,18 @@ const Favorites = ({ userId }) => {
     <div className="container">
       <h1>My Favorites</h1>
       {favorites && favorites.length > 0 ? (
-        favorites.map((character) => (
-          <div key={character._id}>
+        favorites.map((character, index) => (
+          <div key={character._id || index}>
             <h2>{character.name}</h2>
-            <img
-              src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-              alt={character.name}
-              className="character-image"
-            />
-            <p
-              className={`character-description ${
-                !character.description ? "no-description" : ""
-              }`}
-            >
-              {character.description ? character.description : "No description"}
+            {character.thumbnail && (
+              <img
+                src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+                alt={character.name}
+                className="character-image"
+              />
+            )}
+            <p className="character-description">
+              {character.description || "No description"}
             </p>
           </div>
         ))

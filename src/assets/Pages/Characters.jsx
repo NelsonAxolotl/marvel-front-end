@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faSkull, faGhost } from "@fortawesome/free-solid-svg-icons";
 import poster from "../IMG/marvel2.jpg";
-import Favorites from "./Favorites";
 
 const Characters = ({ search, userId }) => {
   const [data, setData] = useState({ results: [], count: 0 });
@@ -61,6 +60,11 @@ const Characters = ({ search, userId }) => {
 
   const handleAddFavorite = async (character) => {
     try {
+      const found = favorites.find((fav) => fav._id === character._id);
+      if (found) {
+        alert("Ce personnage est déjà en favori");
+        return;
+      }
       const response = await axios.post(
         "http://localhost:3000/user/favorites/add",
         {
@@ -69,15 +73,14 @@ const Characters = ({ search, userId }) => {
         }
       );
 
-      const found = favorites.find((fav) => fav._id === character._id);
-      if (!found) {
-        setFavorites([...favorites, character]);
-      }
+      setFavorites([...favorites, character]);
+
       alert(response.data.message); // Affiche le message de statut
+      console.log(response.data);
     } catch (error) {
-      console.error("Erreur lors de l'ajout du favori :", error);
-      if (error.response) {
-        alert(error.response.data.message); // Affiche le message d'erreur du serveur
+      console.log(error.response.data);
+      if (error.response.status === 400) {
+        alert(error.response.data.error); // Affiche le message d'erreur du serveur
       } else {
         alert("Erreur lors de l'ajout du favori"); // Message d'erreur générique
       }
@@ -97,13 +100,14 @@ const Characters = ({ search, userId }) => {
         (fav) => fav._id !== character._id
       );
       setFavorites(updatedFavorites);
-      alert(response.data.message); // Affiche le message de statut
+      alert(response.data.message);
+      console.log(response.data); // Affiche le message de statut
     } catch (error) {
-      console.error("Erreur lors de la suppression du favori :", error);
-      if (error.response) {
-        alert(error.response.data.message); // Affiche le message d'erreur du serveur
+      console.log(error.response.data);
+      if (error.response.status === 400) {
+        alert(error.response.data.error); // Affiche le message d'erreur du serveur
       } else {
-        alert("Erreur lors de la suppression du favori"); // Message d'erreur générique
+        alert("Erreur lors de l'ajout du favori"); // Message d'erreur générique
       }
     }
   };
