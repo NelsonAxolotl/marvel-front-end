@@ -65,7 +65,7 @@ function App() {
               />
               <Route
                 path="/comics"
-                element={<Comics comicsSearch={comicSearch} />}
+                element={<Comics comicsSearch={comicSearch} userId={userId} />}
               />
               <Route
                 path="/favorites"

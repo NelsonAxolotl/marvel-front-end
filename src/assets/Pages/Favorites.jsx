@@ -37,19 +37,31 @@ const Favorites = ({ userId }) => {
     <div className="container">
       <h1>My Favorites</h1>
       {favorites && favorites.length > 0 ? (
-        favorites.map((character, index) => (
-          <div key={character._id || index}>
-            <h2>{character.name}</h2>
-            {character.thumbnail && (
-              <img
-                src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-                alt={character.name}
-                className="character-image"
-              />
-            )}
-            <p className="character-description">
-              {character.description || "No description"}
-            </p>
+        favorites.map((favorite, index) => (
+          <div key={favorite?._id || index} className="card-link">
+            <div className="card" key={favorite?._id}>
+              <div className="card-content">
+                <div className="card-pic">
+                  {favorite?.thumbnail && (
+                    <img
+                      src={`${favorite.thumbnail.path}.${favorite.thumbnail.extension}`}
+                      alt={favorite.name || "Character Image"}
+                      className="character-image"
+                    />
+                  )}
+                </div>
+                <div className="card-details">
+                  {favorite?.name && (
+                    <h2 className="character-name">{favorite.name}</h2>
+                  )}
+                  {favorite?.description && (
+                    <p className="character-description">
+                      {favorite.description}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         ))
       ) : (

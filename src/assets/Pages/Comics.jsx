@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const Comics = ({ comicsSearch }) => {
+const Comics = ({ comicsSearch, userId }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [, setError] = useState(null);
   const [data, setData] = useState({ results: [], count: 0 });
   const [currentPage, setCurrentPage] = useState(1);
+  const [favorites, setFavorites] = useState([]);
   const pageSize = 100;
   const validApiKey = "2yP9TZZSBoTZ2418";
 
@@ -36,7 +37,7 @@ const Comics = ({ comicsSearch }) => {
     };
 
     fetchData();
-  }, [currentPage, comicsSearch]);
+  }, [currentPage, comicsSearch, userId]);
 
   const handleNextPage = () => {
     console.log("Next page button clicked");
@@ -49,6 +50,58 @@ const Comics = ({ comicsSearch }) => {
   };
 
   const totalPages = Math.ceil(data.count / pageSize);
+
+  const handleAddFavorite = async (comic) => {
+    try {
+      const found = favorites.find((fav) => fav._id === comic._id);
+      if (found) {
+        alert("Ce personnage est déjà en favori");
+        return;
+      }
+      const response = await axios.post(
+        "http://localhost:3000/user/addFavorite",
+        {
+          userId: userId, // Envoyer l'ID de l'utilisateur
+          comicId: comic._id, // Envoyer l'ID du comic à ajouter aux favoris
+        }
+      );
+
+      setFavorites([...favorites, comic]);
+
+      alert(response.data.message); // Affiche le message de statut
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.response.data);
+      if (error.response.status === 400) {
+        alert(error.response.data.error); // Affiche le message d'erreur du serveur
+      } else {
+        alert("Erreur lors de l'ajout du favori"); // Message d'erreur générique
+      }
+    }
+  };
+
+  const handleRemoveFavorite = async (comic) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/user/removeFavorite",
+        {
+          userId: userId, // Envoyer l'ID de l'utilisateur
+          comicId: comic._id, // Envoyer l'ID du comic à supprimer des favoris
+        }
+      );
+      const updatedFavorites = favorites.filter((fav) => fav._id !== comic._id);
+      setFavorites(updatedFavorites);
+      alert(response.data.message);
+      console.log(response.data); // Affiche le message de statut
+    } catch (error) {
+      console.log(error.response.data);
+      if (error.response.status === 400) {
+        alert(error.response.data.error); // Affiche le message d'erreur du serveur
+      } else {
+        alert("Erreur lors de l'ajout du favori"); // Message d'erreur générique
+      }
+    }
+  };
 
   return isLoading ? (
     <div
@@ -80,13 +133,20 @@ const Comics = ({ comicsSearch }) => {
               alt={comic.title}
             />
             <div className="comic-card-content">
-              <h2>{comic.title}</h2>
+              {comic.title && <h2>{comic.title}</h2>}
               {comic.description ? (
                 <p>{comic.description}</p>
               ) : (
                 <span className="no-text">No description</span>
               )}
             </div>
+            <button onClick={() => handleAddFavorite(comic)}>
+              Add to Favorites
+            </button>
+
+            <button onClick={() => handleRemoveFavorite(comic)}>
+              Remove from Favorites
+            </button>
           </div>
         ))}
       </div>
