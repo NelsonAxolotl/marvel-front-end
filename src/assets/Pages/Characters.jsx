@@ -66,7 +66,7 @@ const Characters = ({ search, userId }) => {
         return;
       }
       const response = await axios.post(
-        "http://localhost:3000/user/favorites/add",
+        "http://localhost:3000/user/favorites/character/add",
         {
           userId: userId, // Envoyer l'ID de l'utilisateur
           characterId: character._id, // Envoyer l'ID du personnage à ajouter aux favoris
@@ -89,8 +89,11 @@ const Characters = ({ search, userId }) => {
 
   const handleRemoveFavorite = async (character) => {
     try {
+      // console.log("userId:", userId);
+      // console.log("characterId:", character._id);
+
       const response = await axios.post(
-        "http://localhost:3000/user/favorites/remove",
+        "http://localhost:3000/user/favorites/character/remove",
         {
           userId: userId, // Envoyer l'ID de l'utilisateur
           characterId: character._id, // Envoyer l'ID du personnage à supprimer des favoris
@@ -103,11 +106,12 @@ const Characters = ({ search, userId }) => {
       alert(response.data.message);
       console.log(response.data); // Affiche le message de statut
     } catch (error) {
-      console.log(error.response.data);
-      if (error.response.status === 400) {
+      console.error("Erreur lors de la suppression du favori :", error);
+
+      if (error.response && error.response.status === 400) {
         alert(error.response.data.error); // Affiche le message d'erreur du serveur
       } else {
-        alert("Erreur lors de l'ajout du favori"); // Message d'erreur générique
+        alert("Erreur lors de la suppression du favori"); // Message d'erreur générique
       }
     }
   };

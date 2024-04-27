@@ -59,7 +59,7 @@ const Comics = ({ comicsSearch, userId }) => {
         return;
       }
       const response = await axios.post(
-        "http://localhost:3000/user/addFavorite",
+        "http://localhost:3000/user/favorites/comic/add",
         {
           userId: userId, // Envoyer l'ID de l'utilisateur
           comicId: comic._id, // Envoyer l'ID du comic à ajouter aux favoris
@@ -83,7 +83,7 @@ const Comics = ({ comicsSearch, userId }) => {
   const handleRemoveFavorite = async (comic) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/user/removeFavorite",
+        "http://localhost:3000/user/favorites/comic/remove",
         {
           userId: userId, // Envoyer l'ID de l'utilisateur
           comicId: comic._id, // Envoyer l'ID du comic à supprimer des favoris

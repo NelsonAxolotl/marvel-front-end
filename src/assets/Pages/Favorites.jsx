@@ -11,7 +11,7 @@ const Favorites = ({ userId }) => {
     const fetchFavorites = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/favorites/${userId}`
+          `http://localhost:3000/favorites/character/${userId}`
         );
 
         console.log(response);
