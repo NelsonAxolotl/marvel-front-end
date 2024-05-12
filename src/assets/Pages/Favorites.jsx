@@ -11,7 +11,8 @@ const Favorites = ({ userId }) => {
     const fetchFavorites = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/favorites/character/${userId}`
+          // `http://localhost:3000/favorites/character/${userId}`
+          "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/comics"
         );
 
         console.log(response);
