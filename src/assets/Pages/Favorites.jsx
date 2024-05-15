@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Favorites = ({ userId }) => {
+  const { userId } = useParams();
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,7 +13,12 @@ const Favorites = ({ userId }) => {
       try {
         const response = await axios.get(
           // `http://localhost:3000/favorites/character/${userId}`
-          "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/favorites/character/${userId}"
+          `https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/favorites/character/${userId}`,
+          {
+            params: {
+              apikey: validApiKey,
+            },
+          }
         );
 
         console.log(response);
