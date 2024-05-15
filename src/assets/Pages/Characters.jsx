@@ -21,8 +21,8 @@ const Characters = ({ search, userId }) => {
         const skip = (currentPage - 1) * pageSize;
 
         const response = await axios.get(
-          // "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/characters",
-          "http://localhost:3000/characters",
+          "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/characters",
+          // "http://localhost:3000/characters",
           {
             params: {
               apikey: validApiKey,
@@ -66,8 +66,8 @@ const Characters = ({ search, userId }) => {
         return;
       }
       const response = await axios.post(
-        // "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/user/favorites/character/add"
-        "http://localhost:3000/user/favorites/character/add",
+        "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/user/favorites/character/add",
+        // "http://localhost:3000/user/favorites/character/add",
         {
           userId: userId, // Envoyer l'ID de l'utilisateur
           characterId: character._id, // Envoyer l'ID du personnage à ajouter aux favoris
@@ -94,8 +94,8 @@ const Characters = ({ search, userId }) => {
       // console.log("characterId:", character._id);
 
       const response = await axios.post(
-        // "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/user/favorites/character/remove"
-        "http://localhost:3000/user/favorites/character/remove",
+        "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/user/favorites/character/remove",
+        // "http://localhost:3000/user/favorites/character/remove",
         {
           userId: userId, // Envoyer l'ID de l'utilisateur
           characterId: character._id, // Envoyer l'ID du personnage à supprimer des favoris
