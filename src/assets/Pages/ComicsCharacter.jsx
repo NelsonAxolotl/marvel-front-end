@@ -14,10 +14,9 @@ const ComicsCharacter = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/comics/${characterId}`,
+          // `https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/comics/${characterId}`, {
+          `http://localhost:3000/comics/${characterId}`,
           {
-            // `http://localhost:3000/comics/${characterId}`,
-
             params: {
               apikey: validApiKey,
             },

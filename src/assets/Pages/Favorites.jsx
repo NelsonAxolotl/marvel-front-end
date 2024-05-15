@@ -11,8 +11,8 @@ const Favorites = ({ userId }) => {
     const fetchFavorites = async () => {
       try {
         const response = await axios.get(
-          // `http://localhost:3000/favorites/character/${userId}`
-          "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/comics"
+          `http://localhost:3000/favorites/character/${userId}`
+          // "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/favorites/character/${userId}"
         );
 
         console.log(response);
@@ -35,7 +35,7 @@ const Favorites = ({ userId }) => {
       <p>Loading....</p>
     </div>
   ) : (
-    <div className="container">
+    <div className="perso-container">
       <h1>My Favorites</h1>
       {favorites && favorites.length > 0 ? (
         favorites.map((favorite, index) => (

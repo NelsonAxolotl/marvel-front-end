@@ -21,8 +21,8 @@ const Characters = ({ search, userId }) => {
         const skip = (currentPage - 1) * pageSize;
 
         const response = await axios.get(
-          "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/characters",
-          // "http://localhost:3000/characters",
+          // "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/characters",
+          "http://localhost:3000/characters",
           {
             params: {
               apikey: validApiKey,
@@ -66,6 +66,7 @@ const Characters = ({ search, userId }) => {
         return;
       }
       const response = await axios.post(
+        // "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/user/favorites/character/add"
         "http://localhost:3000/user/favorites/character/add",
         {
           userId: userId, // Envoyer l'ID de l'utilisateur
@@ -93,6 +94,7 @@ const Characters = ({ search, userId }) => {
       // console.log("characterId:", character._id);
 
       const response = await axios.post(
+        // "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/user/favorites/character/remove"
         "http://localhost:3000/user/favorites/character/remove",
         {
           userId: userId, // Envoyer l'ID de l'utilisateur
@@ -174,17 +176,20 @@ const Characters = ({ search, userId }) => {
                   </div>
                 </div>
                 <div className="card-actions">
-                  <Link to={`/comics/${character._id}`} className="card-link">
-                    Details
-                  </Link>
+                  <div className="details">
+                    <Link to={`/comics/${character._id}`} className="card-link">
+                      Details
+                    </Link>
+                  </div>
+                  <div className="buttons">
+                    <button onClick={() => handleAddFavorite(character)}>
+                      Add to Favorites
+                    </button>
 
-                  <button onClick={() => handleAddFavorite(character)}>
-                    Add to Favorites
-                  </button>
-
-                  <button onClick={() => handleRemoveFavorite(character)}>
-                    Remove from Favorites
-                  </button>
+                    <button onClick={() => handleRemoveFavorite(character)}>
+                      Remove from Favorites
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
