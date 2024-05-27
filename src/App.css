@@ -667,19 +667,17 @@ form button:hover {
 }
 
 /*--------------PAGE FAVORIS---------*/
-
-.container-fav {
-  margin-bottom: 460px;
-}
-
-.container-fav h1 {
+/* 
+.perso-container {
+  margin-top: 60px;
+} */
+/* .perso-container h1 {
   color: white;
   text-align: center;
-  margin-top: 40px;
-  font-size: 50px;
-  font-family: "Bungee Spice", sans-serif;
-}
 
+  font-size: 22px;
+  font-family: "Bungee Spice", sans-serif;
+} */
 /*RESPONSIVE---*/
 @media screen and (max-width: 768px) {
   .container-fav h1 {

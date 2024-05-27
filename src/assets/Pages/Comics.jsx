@@ -140,13 +140,13 @@ const Comics = ({ comicsSearch, userId }) => {
                 <span className="no-text">No description</span>
               )}
             </div>
-            <button onClick={() => handleAddFavorite(comic)}>
+            {/* <button onClick={() => handleAddFavorite(comic)}>
               Add to Favorites
             </button>
 
             <button onClick={() => handleRemoveFavorite(comic)}>
               Remove from Favorites
-            </button>
+            </button> */}
           </div>
         ))}
       </div>

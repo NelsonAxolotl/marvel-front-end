@@ -9,7 +9,7 @@ import Home from "./assets/Pages/Home";
 import Characters from "./assets/Pages/Characters";
 import Comics from "./assets/Pages/Comics";
 import ComicsCharacter from "./assets/Pages/ComicsCharacter";
-import Favorites from "./assets/Pages/Favorites";
+// import Favorites from "./assets/Pages/Favorites";
 import NotFound from "./assets/Pages/NotFound";
 import Signup from "./assets/Pages/Signup";
 import Login from "./assets/Pages/Login";
@@ -67,10 +67,10 @@ function App() {
                 path="/comics"
                 element={<Comics comicsSearch={comicSearch} userId={userId} />}
               />
-              <Route
+              {/* <Route
                 path="/favorites"
                 element={<Favorites userId={userId} setUserId={setUserId} />}
-              />
+              /> */}
               <Route
                 path="/signup"
                 element={<Signup handleToken={handleToken} />}

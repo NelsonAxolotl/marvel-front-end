@@ -58,65 +58,65 @@ const Characters = ({ search, userId }) => {
 
   const totalPages = Math.ceil(data.count / pageSize);
 
-  const handleAddFavorite = async (character) => {
-    try {
-      const found = favorites.find((fav) => fav._id === character._id);
-      if (found) {
-        alert("Ce personnage est déjà en favori");
-        return;
-      }
-      const response = await axios.post(
-        "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/user/favorites/character/add",
-        // "http://localhost:3000/user/favorites/character/add",
-        {
-          userId: userId, // Envoyer l'ID de l'utilisateur
-          characterId: character._id, // Envoyer l'ID du personnage à ajouter aux favoris
-        }
-      );
+  // const handleAddFavorite = async (character) => {
+  //   try {
+  //     const found = favorites.find((fav) => fav._id === character._id);
+  //     if (found) {
+  //       alert("Ce personnage est déjà en favori");
+  //       return;
+  //     }
+  //     const response = await axios.post(
+  //       "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/user/favorites/character/add",
+  //       // "http://localhost:3000/user/favorites/character/add",
+  //       {
+  //         userId: userId, // Envoyer l'ID de l'utilisateur
+  //         characterId: character._id, // Envoyer l'ID du personnage à ajouter aux favoris
+  //       }
+  //     );
 
-      setFavorites([...favorites, character]);
+  //     setFavorites([...favorites, character]);
 
-      alert(response.data.message); // Affiche le message de statut
-      console.log(response.data);
-    } catch (error) {
-      console.log(error.response.data);
-      if (error.response.status === 400) {
-        alert(error.response.data.error); // Affiche le message d'erreur du serveur
-      } else {
-        alert("Erreur lors de l'ajout du favori"); // Message d'erreur générique
-      }
-    }
-  };
+  //     alert(response.data.message); // Affiche le message de statut
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.log(error.response.data);
+  //     if (error.response.status === 400) {
+  //       alert(error.response.data.error); // Affiche le message d'erreur du serveur
+  //     } else {
+  //       alert("Erreur lors de l'ajout du favori"); // Message d'erreur générique
+  //     }
+  //   }
+  // };
 
-  const handleRemoveFavorite = async (character) => {
-    try {
-      // console.log("userId:", userId);
-      // console.log("characterId:", character._id);
+  // const handleRemoveFavorite = async (character) => {
+  //   try {
+  // console.log("userId:", userId);
+  // console.log("characterId:", character._id);
 
-      const response = await axios.post(
-        "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/user/favorites/character/remove",
-        // "http://localhost:3000/user/favorites/character/remove",
-        {
-          userId: userId, // Envoyer l'ID de l'utilisateur
-          characterId: character._id, // Envoyer l'ID du personnage à supprimer des favoris
-        }
-      );
-      const updatedFavorites = favorites.filter(
-        (fav) => fav._id !== character._id
-      );
-      setFavorites(updatedFavorites);
-      alert(response.data.message);
-      console.log(response.data); // Affiche le message de statut
-    } catch (error) {
-      console.error("Erreur lors de la suppression du favori :", error);
+  //     const response = await axios.post(
+  //       "https://site--marvel-backend-v3--l75gkv7mvq6s.code.run/user/favorites/character/remove",
+  //       // "http://localhost:3000/user/favorites/character/remove",
+  //       {
+  //         userId: userId, // Envoyer l'ID de l'utilisateur
+  //         characterId: character._id, // Envoyer l'ID du personnage à supprimer des favoris
+  //       }
+  //     );
+  //     const updatedFavorites = favorites.filter(
+  //       (fav) => fav._id !== character._id
+  //     );
+  //     setFavorites(updatedFavorites);
+  //     alert(response.data.message);
+  //     console.log(response.data); // Affiche le message de statut
+  //   } catch (error) {
+  //     console.error("Erreur lors de la suppression du favori :", error);
 
-      if (error.response && error.response.status === 400) {
-        alert(error.response.data.error); // Affiche le message d'erreur du serveur
-      } else {
-        alert("Erreur lors de la suppression du favori"); // Message d'erreur générique
-      }
-    }
-  };
+  //     if (error.response && error.response.status === 400) {
+  //       alert(error.response.data.error); // Affiche le message d'erreur du serveur
+  //     } else {
+  //       alert("Erreur lors de la suppression du favori"); // Message d'erreur générique
+  //     }
+  //   }
+  // };
 
   return isLoading ? (
     <div
@@ -181,7 +181,7 @@ const Characters = ({ search, userId }) => {
                       Details
                     </Link>
                   </div>
-                  <div className="buttons">
+                  {/* <div className="buttons">
                     <button onClick={() => handleAddFavorite(character)}>
                       Add to Favorites
                     </button>
@@ -189,7 +189,7 @@ const Characters = ({ search, userId }) => {
                     <button onClick={() => handleRemoveFavorite(character)}>
                       Remove from Favorites
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

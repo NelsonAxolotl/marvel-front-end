@@ -35,9 +35,9 @@ const Header = ({
             <Link to="/comics">
               <li>Comics</li>
             </Link>
-            <Link to="/favorites">
+            {/* <Link to="/favorites">
               <li>Favorites</li>
-            </Link>
+            </Link> */}
           </ul>
           <div className="btn">
             {token ? (
